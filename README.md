@@ -1,1 +1,2 @@
-# This is where I upload random automation scripts to make life a bit easier.
+# A script that will duplicate a file and add a suffix _96xxdata.txt at the end.
+# Can be modified. 

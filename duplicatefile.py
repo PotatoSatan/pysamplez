@@ -4,7 +4,7 @@ import shutil
 extensions = []
 
 while True:
-    source_dr = input('Enter source directory : e.g. C:/Users/miles/Desktop/CardCash\n')
+    source_dr = input('Enter source directory : e.g. C:/User/test/\n')
     if not os.path.exists(source_dr):
         print('Source directory does not exist.')
         continue
