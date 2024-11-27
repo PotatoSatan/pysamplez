@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 extensions = []
 
@@ -9,12 +10,12 @@ while True:
         print('Source directory does not exist.')
         continue
     else:
-        lists = os.listdir(source_dr)
+        lists = [f for f in os.listdir(source_dr) if os.path.isfile(os.path.join(source_dr, f))]
         for y in lists:
             print(y)
         break
 
-while True:
+for count in range(0, 5):
     source_file = input('Enter source file from the list to duplicate.\ne.g. 370112_96xxdata.txt\n')
     currentDir = os.path.join(source_dr, source_file)
     if not os.path.exists(currentDir):
@@ -22,6 +23,10 @@ while True:
         continue
     else:
         break
+else:
+    print('Max attempts reached, please rerun.')
+    sys.exit()
+
 
 print('Enter extensions to duplicate (will append_96xxdata.txt), enter STOP to proceed with duplication.')
 while True:
