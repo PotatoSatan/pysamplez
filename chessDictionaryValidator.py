@@ -1,12 +1,13 @@
 import random
-chessBoard = {'1a': '', '1b': '', '1c': '', '1d': '', '1e': '', '1f': '', '1g': '', '1h': '',
-              '2a': '', '2b': '', '2c': '', '2d': '', '2e': '', '2f': '', '2g': '', '2h': '',
-              '3a': '', '3b': '', '3c': '', '3d': '', '3e': '', '3f': '', '3g': '', '3h': '',
-              '4a': '', '4b': '', '4c': '', '4d': '', '4e': '', '4f': '', '4g': '', '4h': '',
-              '5a': '', '5b': '', '5c': '', '5d': '', '5e': '', '5f': '', '5g': '', '5h': '',
-              '6a': '', '6b': '', '6c': '', '6d': '', '6e': '', '6f': '', '6g': '', '6h': '',
-              '7a': '', '7b': '', '7c': '', '7d': '', '7e': '', '7f': '', '7g': '', '7h': '',
-              '8a': '', '8b': '', '8c': '', '8d': '', '8e': '', '8f': '', '8g': '', '8h': ''}
+chessBoard = {'1a': None, '1b': None, '1c': None, '1d': None, '1e': None, '1f': None, '1g': None, '1h': None,
+              '2a': None, '2b': None, '2c': None, '2d': None, '2e': None, '2f': None, '2g': None, '2h': None,
+              '3a': None, '3b': None, '3c': None, '3d': None, '3e': None, '3f': None, '3g': None, '3h': None,
+              '4a': None, '4b': None, '4c': None, '4d': None, '4e': None, '4f': None, '4g': None, '4h': None,
+              '5a': None, '5b': None, '5c': None, '5d': None, '5e': None, '5f': None, '5g': None, '5h': None,
+              '6a': None, '6b': None, '6c': None, '6d': None, '6e': None, '6f': None, '6g': None, '6h': None,
+              '7a': None, '7b': None, '7c': None, '7d': None, '7e': None, '7f': None, '7g': None, '7h': None,
+              '8a': None, '8b': None, '8c': None, '8d': None, '8e': None, '8f': None, '8g': None, '8h': None}
+
 
 validPieces = [ 'wpawn', 'wrook', 'wknight', 'wbishop', 'wqueen', 'wking',
                 'bpawn', 'brook', 'bknight', 'bbishop', 'bqueen', 'bking']
@@ -34,8 +35,11 @@ def PawnCaller(randomKey):
 while True:
     chessKey = input()
     if chessKey == 'wpawn':
-        for checking in randomWhitePawnSlot:
-            if checking in chessBoard and chessBoard[checking] is None:
-                chessBoard[randomWhitePawnSlot] = chessKey
-
+        for i in range(0,8):
+            for checking in randomWhitePawnSlot():
+                if checking in chessBoard and chessBoard[checking] is None:
+                    chessBoard[checking] = chessKey
+                    break
+        else:
+            print('Max white pawns reached, try a new piece.')
     print(chessBoard)
