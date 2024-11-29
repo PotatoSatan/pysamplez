@@ -21,7 +21,7 @@ if yesorno  == 'Y':
         supplyName = input()
         if supplyName in supplies:
             print ('Supply ' +supplyName +' is in the table')
-        elif supplyName.lower() == 'exit':
+        elif supplyName == 'exit':
             continue
         else:
             print (supplyName +' does not exist.')
