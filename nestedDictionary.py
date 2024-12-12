@@ -32,3 +32,4 @@ while True:
         itemKey = input()
         allguestItems[category][itemVal] = itemKey
         print(f"Added! {category}, {itemVal}, {itemKey}")
+        print(allguestItems)
