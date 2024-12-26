@@ -10,9 +10,8 @@ while True:
      print('Not an integer')
 
 while number != 1:
-    number = collatz.collatz(number)
+    number = number // 2
     print(number)
 
 print('You reached 1.')
-
 
